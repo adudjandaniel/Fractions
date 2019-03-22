@@ -13,12 +13,12 @@ class Fraction():
     def __add__(self, next_fraction):
         new_numerator = self.a * next_fraction.b + self.b * next_fraction.a
         new_denominator = self.b * next_fraction.b
-        return Fraction(new_numerator, new_denominator)
+        return Fraction(new_numerator, new_denominator).simplified()
 
     def __sub__(self, next_fraction):
         new_numerator = self.a * next_fraction.b - self.b * next_fraction.a
         new_denominator = self.b * next_fraction.b
-        return Fraction(new_numerator, new_denominator)
+        return Fraction(new_numerator, new_denominator).simplified()
 
     def __eq__(self, next_fraction):
         return self.simplified().__str__() == next_fraction.simplified().__str__()
@@ -61,13 +61,15 @@ class Fraction():
         
         return Fraction(a,b)
 
-#af1 = Fraction(1,3)
-#f2 = Fraction(2,5)
-#f3 = Fraction(9,27)
+#f1 = Fraction(1,8)
+#f2 = Fraction(3,4)
+#f3 = Fraction(2,8)
 
 
 #f4 = f1 + f2
-#f5 = f1 - f2
+#print(f4)
+#f5 = f2 - f3
+#print(f5)
 
 
 
