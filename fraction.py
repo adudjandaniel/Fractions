@@ -26,17 +26,12 @@ class Fraction():
     def simplify(self):
         a = self.a
         b= self.b
-        while True:
-            if a == b:
-                gcd = a
-                break
-            elif (a == 0 and b) or (a and b == 0):
-                gcd = b if b else a
-                break
-            elif a > b:
-                a %= b
-            else:
-                b %= a
+        if b > a:
+            a, b = b, a
+        while b != 0:
+            remainder = a % b
+            a, b = b, remainder
+        gcd = a
         
         self.a = int(self.a / gcd)
         self.b = int(self.b / gcd)
@@ -44,17 +39,12 @@ class Fraction():
     def simplified(self):
         a = self.a
         b= self.b
-        while True:
-            if a == b:
-                gcd = a
-                break
-            elif (a == 0 and b) or (a and b == 0):
-                gcd = b if b else a
-                break
-            elif a > b:
-                a %= b
-            else:
-                b %= a
+        if b > a:
+            a, b = b, a
+        while b != 0:
+            remainder = a % b
+            a, b = b, remainder
+        gcd = a
         
         a = int(self.a / gcd)
         b = int(self.b / gcd)
@@ -63,9 +53,10 @@ class Fraction():
 
 #f1 = Fraction(1,8)
 #f2 = Fraction(3,4)
-#f3 = Fraction(2,8)
+#f3 = Fraction(970,10)
 
-
+#print(f3.simplified())
+#print()
 #f4 = f1 + f2
 #print(f4)
 #f5 = f2 - f3
