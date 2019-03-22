@@ -1,1 +1,1 @@
-This is my first project that uses Git.
+This Program is a creation of a fraction data type in python.
