@@ -1,2 +1,2 @@
-# Fraction data type
+# Fraction Data Type
 Allows basic operations for fractions
